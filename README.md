@@ -38,3 +38,5 @@
 ## push cron ssh private random
 ## push cron ssh private random
 ## push cron ssh private random
+## push cron 1
+## push cron counter 1
