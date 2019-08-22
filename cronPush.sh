@@ -48,11 +48,7 @@ cat loremPush.txt>>README.md
 
 # Check which branch
 if [ "$repo" == "cronPush" ] && [ "$branch" == "master" ]; then
-    #git branch
-    #git status
     git add .
-    #git add loremPush.txt
-    #git status
     git commit -m "Add push cron ssh private random to README"
     git push git@github.com:barrelmaker/cronPush.git
 fi
