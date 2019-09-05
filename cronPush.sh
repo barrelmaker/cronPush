@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Gives a 50% chance that the crontab executes
-if [ $(( ( RANDOM % 10 )  + 1 )) -le 5 ]; then
+if [ $(( ( RANDOM % 10 )  + 1 )) -le 7 ]; then
     exit 0
 fi
 
