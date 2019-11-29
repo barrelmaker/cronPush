@@ -15,9 +15,9 @@ git config --global user.email cooperleong0@gmail.com
 
 # Creates a counter variable to keep track of the number of pushes,
 # Will also be used to count the index of the words in the text file
-CRON_PUSH_COUNTER=$(< cronPush/cronPushCounter.txt)
+CRON_PUSH_COUNTER=$(< cronPushCounter.txt)
 CRON_PUSH_COUNTER=$((CRON_PUSH_COUNTER + 1))
-echo $CRON_PUSH_COUNTER > cronPush/cronPushCounter.txt
+echo $CRON_PUSH_COUNTER > cronPushCounter.txt
 echo $CRON_PUSH_COUNTER
 
 # Sets the variable CRON_PUSH_TIME to be the current time
