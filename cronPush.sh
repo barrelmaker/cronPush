@@ -1,13 +1,13 @@
-# Gives a 50% chance that the crontab executes
-#if [ $(( ( RANDOM % 10 )  + 1 )) -le 6 ]; then
-#    echo "Stopped"
-#    exit 0
-#fi
+#!/bin/bash
 
-echo "Pushing"
+# Gives a 50% chance that the crontab executes
+if [ $(( ( RANDOM % 10 )  + 1 )) -le 8 ]; then
+    exit 0
+fi
 
 # Goes to proper directory
-cd cronPush
+cd
+cd $HOME/Documents/Projects/cronPush
 
 # Sets the Github username and email
 git config --global user.name "barrelmaker"
@@ -15,14 +15,14 @@ git config --global user.email cooperleong0@gmail.com
 
 # Creates a counter variable to keep track of the number of pushes,
 # Will also be used to count the index of the words in the text file
-CRON_PUSH_COUNTER=$(< cronPushCounter.txt)
+CRON_PUSH_COUNTER=$(< $HOME/Documents/Projects/cronPush/cronPushCounter.txt)
 CRON_PUSH_COUNTER=$((CRON_PUSH_COUNTER + 1))
-echo $CRON_PUSH_COUNTER > cronPushCounter.txt
+echo $CRON_PUSH_COUNTER > $HOME/Documents/Projects/cronPush/cronPushCounter.txt
 echo $CRON_PUSH_COUNTER
 
 # Sets the variable CRON_PUSH_TIME to be the current time
 CRON_PUSH_TIME=$(date)
-echo $CRON_PUSH_TIME > cronPush/cronPushTime.txt
+echo $CRON_PUSH_TIME > $HOME/Documents/Projects/cronPush/cronPushTime.txt
 echo $CRON_PUSH_TIME
 
 # Gets the number of words in the text file
