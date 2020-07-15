@@ -7,22 +7,22 @@ fi
 
 # Goes to proper directory
 cd
-cd $HOME/Documents/Projects/cronPush
+cd $HOME/your_path_to_cronPush
 
 # Sets the Github username and email
-git config --global user.name "barrelmaker"
-git config --global user.email cooperleong0@gmail.com
+git config --global user.name "your_username"
+git config --global user.email your_email
 
 # Creates a counter variable to keep track of the number of pushes,
 # Will also be used to count the index of the words in the text file
-CRON_PUSH_COUNTER=$(< $HOME/Documents/Projects/cronPush/cronPushCounter.txt)
+CRON_PUSH_COUNTER=$(< $HOME/your_path_to_cronPushCounter.txt
 CRON_PUSH_COUNTER=$((CRON_PUSH_COUNTER + 1))
-echo $CRON_PUSH_COUNTER > $HOME/Documents/Projects/cronPush/cronPushCounter.txt
+echo $CRON_PUSH_COUNTER > $HOME/your_path_to_cronPushCounter.txt
 echo $CRON_PUSH_COUNTER
 
 # Sets the variable CRON_PUSH_TIME to be the current time
 CRON_PUSH_TIME=$(date)
-echo $CRON_PUSH_TIME > $HOME/Documents/Projects/cronPush/cronPushTime.txt
+echo $CRON_PUSH_TIME > $HOME/your_path_to_cronPushTime.txt
 echo $CRON_PUSH_TIME
 
 # Gets the number of words in the text file
@@ -50,5 +50,5 @@ cat loremPush.txt>>README.md
 if [ "$repo" == "cronPush" ] && [ "$branch" == "master" ]; then
     git add .
     git commit -m "Add push cron ssh private random to README"
-    git push git@github.com:barrelmaker/cronPush.git
+    git push git@github.com:your_username/cronPush.git
 fi
